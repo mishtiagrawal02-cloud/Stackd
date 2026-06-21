@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackd — merge PDFs in your browser, free</title>
+<meta name="description" content="Merge multiple PDFs into one file entirely inside your browser. No upload, no watermark, no file limit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<header class="site-header">
+  <span class="eyebrow">No upload &middot; no watermark &middot; no file limit</span>
+</header>
+ 
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>Stack your PDFs<br>into one.</h1>
+      <p class="lede">Add as many PDFs as you like, drag to reorder, then merge — entirely inside this browser tab. Your files are never sent anywhere.</p>
+    </div>
+ 
+    <div class="tray" id="dropzone">
+      <div class="tray-cards" aria-hidden="true">
+        <span class="deco-card deco-blue"></span>
+        <span class="deco-card deco-pink"></span>
+        <span class="deco-card deco-canary"></span>
+      </div>
+      <p class="tray-label">Drop PDFs here, or</p>
+      <label class="add-btn" for="file-input">Add files</label>
+      <input type="file" id="file-input" accept="application/pdf,.pdf" multiple hidden>
+    </div>
+ 
+    <p class="error" id="errorMsg" role="alert" hidden></p>
+  </section>
+ 
+  <section class="stack-section" id="stackSection" hidden>
+    <div class="stack-head">
+      <h2>Your stack</h2>
+      <span class="stack-meta" id="stackMeta">0 files &middot; 0 pages</span>
+    </div>
+    <p class="hint">Drag a sheet by its handle to change the order. Use <strong>Split</strong> to break a file into pieces — that's how you insert another file partway through it instead of only at the end.</p>
+ 
+    <ul class="sheet-list" id="sheetList"></ul>
+ 
+    <button class="stamp-btn" id="mergeBtn" disabled>
+      <span id="mergeBtnLabel">Merge stack</span>
+    </button>
+    <p class="stamp-hint" id="stampHint">Add at least 2 PDFs to merge</p>
+  </section>
+ 
+  <section class="result-section" id="resultSection" hidden>
+    <div class="result-sheet">
+      <span class="result-icon" aria-hidden="true">&#128196;</span>
+      <div>
+        <p class="result-title" id="resultTitle">merged.pdf</p>
+        <p class="result-meta" id="resultMeta"></p>
+      </div>
+    </div>
+    <a class="download-btn" id="downloadLink" download="merged.pdf">Download merged PDF</a>
+    <button class="reset-btn" id="resetBtn">Merge another stack</button>
+  </section>
+ 
+  <section class="how-section">
+    <p>Runs entirely in your browser using <strong>pdf-lib</strong> — your PDFs are read locally and never uploaded to a server, so it works just as well for private documents.</p>
+  </section>
+</main>
+ 
+<footer class="site-footer">
+  <div class="footer-meta">
+    <p class="maker">Mishti Agarwal</p>
+    <a class="mail" href="mailto:mishtiagrawal02@gmail.com">mishtiagrawal02@gmail.com</a>
+  </div>
+  <a class="dh-stamp" href="https://digitalheroesco.com" target="_blank" rel="noopener">Built for Digital Heroes</a>
+</footer>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+ 
